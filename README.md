@@ -1,7 +1,5 @@
 # SC2002 – Restaurant Rush
 
-A Java-based, turn-based restaurant management game developed for the SC2002 Software Engineering group project.
-
 ## 1. Project Overview
 
 Restaurant Rush is a command-line restaurant management simulation where the player takes the role of a restaurant manager. Players must manage limited staff resources, serve customers efficiently, prepare food orders and maximise customer satisfaction while meeting the restaurant's revenue targets.
