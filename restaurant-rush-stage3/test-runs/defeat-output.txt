@@ -1,0 +1,558 @@
+==============================================================================
+  RESTAURANT RUSH  -  Stage 3: Host, combo meals and Happy Hour
+==============================================================================
+You are the manager. Each turn, in this order: the Host may seat one queued
+customer, the Waiter does one task, and the Chef does one preparation unit.
+The Cashier charges customers automatically.
+
+Setting : 18 turns, 2 tables
+Arrivals: turn 1 Regular, turn 4 Critic, turn 7 VIP, turn 10 Regular, turn 13 Regular, turn 16 Regular
+Dishes  : Salad $9.00 (1 unit), Burger $15.00 (1 unit), Pasta $18.00 (2 units)
+Combos  : Salad + Burger $21.60 (2 units), Salad + Pasta $24.30 (3 units), Burger + Pasta $29.70 (3 units)
+          (a customer kept waiting 2+ turns before ordering gets hungry and orders a combo)
+Happy Hr: once per game, at the start of a turn: 20% off orders taken that turn and the
+          next; customers waiting for a table or food recover 15 at the start of each
+Goal    : after turn 18, at least 4 paid customers, revenue at least $45.00,
+          and average satisfaction of paid customers at least 60
+Seed    : 2002 (customers choose their own food from this seed)
+
+Type 'help' at any prompt for the list of commands.
+
+==============================================================================
+ TURN 1 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Arrival: C1 (Regular) arrives and joins the waiting queue with satisfaction 100. Regular: loses 8 satisfaction per waiting turn.
+ Waiting queue : C1
+ Tables        : Table 1: free   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular  100 [##########]   waiting in the queue     -
+
+ Staff tasks available
+   Host    : seat C1 | wait
+   Waiter  : seat C1 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T1 Happy Hour? no (this manager never uses it)
+ Host> wait         # T1 Host (never used either)
+   -> Host waits this turn.
+ Waiter> wait         # T1 Waiter: leaves C1 in the queue
+   -> Waiter waits this turn.
+ Chef> wait         # T1 Chef
+   -> Chef waits this turn.
+ --- End of turn 1 ---
+   * Still waiting, satisfaction drops: C1 100->92
+ Served 0 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 1/18
+
+==============================================================================
+ TURN 2 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C1
+ Tables        : Table 1: free   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   92 [#########.]   waiting in the queue     -
+
+ Staff tasks available
+   Host    : seat C1 | wait
+   Waiter  : seat C1 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T2
+ Host> wait
+   -> Host waits this turn.
+ Waiter> wait
+   -> Waiter waits this turn.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 2 ---
+   * Still waiting, satisfaction drops: C1 92->84
+ Served 0 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 2/18
+
+==============================================================================
+ TURN 3 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C1
+ Tables        : Table 1: free   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   84 [########..]   waiting in the queue     -
+
+ Staff tasks available
+   Host    : seat C1 | wait
+   Waiter  : seat C1 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T3
+ Host> wait
+   -> Host waits this turn.
+ Waiter> wait
+   -> Waiter waits this turn.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 3 ---
+   * Still waiting, satisfaction drops: C1 84->76
+ Served 0 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 3/18
+
+==============================================================================
+ TURN 4 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Arrival: C2 (Critic) arrives and joins the waiting queue with satisfaction 100. Critic: loses 12 satisfaction per waiting turn; always orders the dish that takes longest to prepare.
+ Waiting queue : C1, C2
+ Tables        : Table 1: free   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   76 [########..]   waiting in the queue     -
+ C2   Critic   100 [##########]   waiting in the queue     -
+
+ Staff tasks available
+   Host    : seat C1 | seat C2 | wait
+   Waiter  : seat C1 | seat C2 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T4: the Critic arrives
+ Host> wait
+   -> Host waits this turn.
+ Waiter> wait
+   -> Waiter waits this turn.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 4 ---
+   * Still waiting, satisfaction drops: C1 76->68, C2 100->88
+ Served 0 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 4/18
+
+==============================================================================
+ TURN 5 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C1, C2
+ Tables        : Table 1: free   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   68 [#######...]   waiting in the queue     -
+ C2   Critic    88 [#########.]   waiting in the queue     -
+
+ Staff tasks available
+   Host    : seat C1 | seat C2 | wait
+   Waiter  : seat C1 | seat C2 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T5
+ Host> wait
+   -> Host waits this turn.
+ Waiter> seat C1      # Waiter seats C1 after 4 turns in the queue
+   -> Waiter seats C1 at Table 1.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 5 ---
+   * Still waiting, satisfaction drops: C1 68->60, C2 88->76
+ Served 0 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 5/18
+
+==============================================================================
+ TURN 6 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C2
+ Tables        : Table 1: C1   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   60 [######....]   seated, not yet ordered  -
+ C2   Critic    76 [########..]   waiting in the queue     -
+
+ Staff tasks available
+   Host    : seat C2 | wait
+   Waiter  : order C1 | seat C2 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T6
+ Host> wait
+   -> Host waits this turn.
+ Waiter> order C1     # C1 has waited 5 turns: hungry, orders Salad + Burger ($21.60, 2 units)
+   -> Waiter takes C1's order: C1 chooses Salad + Burger ($21.60, 2 preparation units).
+   Chef can now: cook C1 (Salad + Burger 0/2) | wait
+ Chef> cook C1
+   -> Chef prepares C1's Salad + Burger: 1/2 units done.
+ --- End of turn 6 ---
+   * Still waiting, satisfaction drops: C1 60->52, C2 76->64
+ Served 0 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 6/18
+
+==============================================================================
+ TURN 7 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Arrival: C3 (VIP) arrives and joins the waiting queue with satisfaction 100. VIP: loses 5 satisfaction per waiting turn; gets 10% off the bill.
+ Waiting queue : C2, C3
+ Tables        : Table 1: C1   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   52 [#####.....]   waiting for food         Salad + Burger 1/2 units, bill $21.60
+ C2   Critic    64 [######....]   waiting in the queue     -
+ C3   VIP      100 [##########]   waiting in the queue     -
+
+ Staff tasks available
+   Host    : seat C2 | seat C3 | wait
+   Waiter  : seat C2 | seat C3 | wait
+   Chef    : cook C1 (Salad + Burger 1/2) | wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T7
+ Host> wait
+   -> Host waits this turn.
+ Waiter> wait
+   -> Waiter waits this turn.
+ Chef> cook C1      # READY
+   -> Chef finishes C1's Salad + Burger (2/2 units): READY. It can be served next turn at the earliest.
+ --- End of turn 7 ---
+   * Still waiting, satisfaction drops: C1 52->44, C2 64->52, C3 100->95
+ Served 0 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 7/18
+
+==============================================================================
+ TURN 8 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C2, C3
+ Tables        : Table 1: C1   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   44 [####......]   waiting for food         Salad + Burger READY, bill $21.60
+ C2   Critic    52 [#####.....]   waiting in the queue     -
+ C3   VIP       95 [##########]   waiting in the queue     -
+
+ Staff tasks available
+   Host    : seat C2 | seat C3 | wait
+   Waiter  : serve C1 | seat C2 | seat C3 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T8
+ Host> wait
+   -> Host waits this turn.
+ Waiter> serve C1
+   -> Waiter serves C1's Salad + Burger: SERVED. C1 starts eating; satisfaction stays at 44.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 8 ---
+   * Still waiting, satisfaction drops: C2 52->40, C3 95->90
+ Served 1 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 8/18
+
+==============================================================================
+ TURN 9 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C2, C3
+ Tables        : Table 1: C1   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   44 [####......]   served, eating           Salad + Burger SERVED, bill $21.60
+ C2   Critic    40 [####......]   waiting in the queue     -
+ C3   VIP       90 [#########.]   waiting in the queue     -
+
+ Staff tasks available
+   Host    : seat C2 | seat C3 | wait
+   Waiter  : seat C2 | seat C3 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T9
+ Host> wait
+   -> Host waits this turn.
+ Waiter> seat C2      # the Critic, already down to 40
+   -> Waiter seats C2 at Table 2.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 9 ---
+   * C1 finishes eating: READY_TO_PAY (pays next turn at the earliest).
+   * Still waiting, satisfaction drops: C2 40->28, C3 90->85
+ Served 1 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 9/18
+
+==============================================================================
+ TURN 10 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Arrival: C4 (Regular) arrives and joins the waiting queue with satisfaction 100. Regular: loses 8 satisfaction per waiting turn.
+ Waiting queue : C3, C4
+ Tables        : Table 1: C1   Table 2: C2
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   44 [####......]   READY_TO_PAY             Salad + Burger SERVED, bill $21.60
+ C2   Critic    28 [###.......]   seated, not yet ordered  -
+ C3   VIP       85 [#########.]   waiting in the queue     -
+ C4   Regular  100 [##########]   waiting in the queue     -
+
+ Staff tasks available
+   Host    : wait
+   Waiter  : order C2 | wait
+   Chef    : wait
+   Cashier : automatic: will charge C1 this turn
+ Start Happy Hour this turn? (y/N)> n            # T10
+ Host> wait
+   -> Host waits this turn.
+ Waiter> order C2     # Burger + Pasta, 3 units
+   -> Waiter takes C2's order: C2 chooses Burger + Pasta ($29.70, 3 preparation units).
+   Chef can now: cook C2 (Burger + Pasta 0/3) | wait
+ Chef> cook C2
+   -> Chef prepares C2's Burger + Pasta: 1/3 units done.
+ --- End of turn 10 ---
+   * Cashier collects $21.60 from C1: PAID, satisfaction 44 recorded, Table 1 is free.
+   * Still waiting, satisfaction drops: C2 28->16, C3 85->80, C4 100->92
+ Served 1 | Unhappy departures 0 | Revenue $21.60 | Avg satisfaction (paid) 44.0 | Turns used 10/18
+
+==============================================================================
+ TURN 11 of 18     Revenue $21.60     Avg satisfaction (paid) 44.0
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C3, C4
+ Tables        : Table 1: free   Table 2: C2
+
+ Cust Type     Satisfaction       Status                   Order
+ C2   Critic    16 [##........]   waiting for food         Burger + Pasta 1/3 units, bill $29.70
+ C3   VIP       80 [########..]   waiting in the queue     -
+ C4   Regular   92 [#########.]   waiting in the queue     -
+ Paid          : C1 $21.60 (44)
+
+ Staff tasks available
+   Host    : seat C3 | seat C4 | wait
+   Waiter  : seat C3 | seat C4 | wait
+   Chef    : cook C2 (Burger + Pasta 1/3) | wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T11
+ Host> wait
+   -> Host waits this turn.
+ Waiter> wait
+   -> Waiter waits this turn.
+ Chef> cook C2
+   -> Chef prepares C2's Burger + Pasta: 2/3 units done.
+ --- End of turn 11 ---
+   * Still waiting, satisfaction drops: C2 16->4, C3 80->75, C4 92->84
+ Served 1 | Unhappy departures 0 | Revenue $21.60 | Avg satisfaction (paid) 44.0 | Turns used 11/18
+
+==============================================================================
+ TURN 12 of 18     Revenue $21.60     Avg satisfaction (paid) 44.0
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C3, C4
+ Tables        : Table 1: free   Table 2: C2
+
+ Cust Type     Satisfaction       Status                   Order
+ C2   Critic     4 [..........]   waiting for food         Burger + Pasta 2/3 units, bill $29.70
+ C3   VIP       75 [########..]   waiting in the queue     -
+ C4   Regular   84 [########..]   waiting in the queue     -
+ Paid          : C1 $21.60 (44)
+
+ Staff tasks available
+   Host    : seat C3 | seat C4 | wait
+   Waiter  : seat C3 | seat C4 | wait
+   Chef    : cook C2 (Burger + Pasta 2/3) | wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T12
+ Host> wait
+   -> Host waits this turn.
+ Waiter> wait
+   -> Waiter waits this turn.
+ Chef> cook C2      # READY, but the Critic runs out of patience at the end of this turn
+   -> Chef finishes C2's Burger + Pasta (3/3 units): READY. It can be served next turn at the earliest.
+ --- End of turn 12 ---
+   * Still waiting, satisfaction drops: C3 75->70, C4 84->76
+   * C2 (4->0) leaves without paying. Their Burger + Pasta order is cancelled. Table 2 is free.
+ Served 1 | Unhappy departures 1 | Revenue $21.60 | Avg satisfaction (paid) 44.0 | Turns used 12/18
+
+==============================================================================
+ TURN 13 of 18     Revenue $21.60     Avg satisfaction (paid) 44.0
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Arrival: C5 (Regular) arrives and joins the waiting queue with satisfaction 100. Regular: loses 8 satisfaction per waiting turn.
+ Waiting queue : C3, C4, C5
+ Tables        : Table 1: free   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C3   VIP       70 [#######...]   waiting in the queue     -
+ C4   Regular   76 [########..]   waiting in the queue     -
+ C5   Regular  100 [##########]   waiting in the queue     -
+ Paid          : C1 $21.60 (44)
+ Left unhappy  : C2
+
+ Staff tasks available
+   Host    : seat C3 | seat C4 | seat C5 | wait
+   Waiter  : seat C3 | seat C4 | seat C5 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T13
+ Host> wait
+   -> Host waits this turn.
+ Waiter> seat C3      # the VIP
+   -> Waiter seats C3 at Table 1.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 13 ---
+   * Still waiting, satisfaction drops: C3 70->65, C4 76->68, C5 100->92
+ Served 1 | Unhappy departures 1 | Revenue $21.60 | Avg satisfaction (paid) 44.0 | Turns used 13/18
+
+==============================================================================
+ TURN 14 of 18     Revenue $21.60     Avg satisfaction (paid) 44.0
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C4, C5
+ Tables        : Table 1: C3   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C3   VIP       65 [#######...]   seated, not yet ordered  -
+ C4   Regular   68 [#######...]   waiting in the queue     -
+ C5   Regular   92 [#########.]   waiting in the queue     -
+ Paid          : C1 $21.60 (44)
+ Left unhappy  : C2
+
+ Staff tasks available
+   Host    : seat C4 | seat C5 | wait
+   Waiter  : order C3 | seat C4 | seat C5 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T14
+ Host> wait
+   -> Host waits this turn.
+ Waiter> order C3     # hungry VIP: Salad + Burger combo, 10% off = $19.44
+   -> Waiter takes C3's order: C3 chooses Salad + Burger ($19.44, 2 preparation units).
+   Chef can now: cook C3 (Salad + Burger 0/2) | wait
+ Chef> cook C3
+   -> Chef prepares C3's Salad + Burger: 1/2 units done.
+ --- End of turn 14 ---
+   * Still waiting, satisfaction drops: C3 65->60, C4 68->60, C5 92->84
+ Served 1 | Unhappy departures 1 | Revenue $21.60 | Avg satisfaction (paid) 44.0 | Turns used 14/18
+
+==============================================================================
+ TURN 15 of 18     Revenue $21.60     Avg satisfaction (paid) 44.0
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C4, C5
+ Tables        : Table 1: C3   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C3   VIP       60 [######....]   waiting for food         Salad + Burger 1/2 units, bill $19.44
+ C4   Regular   60 [######....]   waiting in the queue     -
+ C5   Regular   84 [########..]   waiting in the queue     -
+ Paid          : C1 $21.60 (44)
+ Left unhappy  : C2
+
+ Staff tasks available
+   Host    : seat C4 | seat C5 | wait
+   Waiter  : seat C4 | seat C5 | wait
+   Chef    : cook C3 (Salad + Burger 1/2) | wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T15
+ Host> wait
+   -> Host waits this turn.
+ Waiter> wait
+   -> Waiter waits this turn.
+ Chef> cook C3
+   -> Chef finishes C3's Salad + Burger (2/2 units): READY. It can be served next turn at the earliest.
+ --- End of turn 15 ---
+   * Still waiting, satisfaction drops: C3 60->55, C4 60->52, C5 84->76
+ Served 1 | Unhappy departures 1 | Revenue $21.60 | Avg satisfaction (paid) 44.0 | Turns used 15/18
+
+==============================================================================
+ TURN 16 of 18     Revenue $21.60     Avg satisfaction (paid) 44.0
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Arrival: C6 (Regular) arrives and joins the waiting queue with satisfaction 100. Regular: loses 8 satisfaction per waiting turn.
+ Waiting queue : C4, C5, C6
+ Tables        : Table 1: C3   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C3   VIP       55 [######....]   waiting for food         Salad + Burger READY, bill $19.44
+ C4   Regular   52 [#####.....]   waiting in the queue     -
+ C5   Regular   76 [########..]   waiting in the queue     -
+ C6   Regular  100 [##########]   waiting in the queue     -
+ Paid          : C1 $21.60 (44)
+ Left unhappy  : C2
+
+ Staff tasks available
+   Host    : seat C4 | seat C5 | seat C6 | wait
+   Waiter  : serve C3 | seat C4 | seat C5 | seat C6 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T16
+ Host> wait
+   -> Host waits this turn.
+ Waiter> serve C3
+   -> Waiter serves C3's Salad + Burger: SERVED. C3 starts eating; satisfaction stays at 55.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 16 ---
+   * Still waiting, satisfaction drops: C4 52->44, C5 76->68, C6 100->92
+ Served 2 | Unhappy departures 1 | Revenue $21.60 | Avg satisfaction (paid) 44.0 | Turns used 16/18
+
+==============================================================================
+ TURN 17 of 18     Revenue $21.60     Avg satisfaction (paid) 44.0
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C4, C5, C6
+ Tables        : Table 1: C3   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C3   VIP       55 [######....]   served, eating           Salad + Burger SERVED, bill $19.44
+ C4   Regular   44 [####......]   waiting in the queue     -
+ C5   Regular   68 [#######...]   waiting in the queue     -
+ C6   Regular   92 [#########.]   waiting in the queue     -
+ Paid          : C1 $21.60 (44)
+ Left unhappy  : C2
+
+ Staff tasks available
+   Host    : seat C4 | seat C5 | seat C6 | wait
+   Waiter  : seat C4 | seat C5 | seat C6 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Start Happy Hour this turn? (y/N)> n            # T17
+ Host> wait
+   -> Host waits this turn.
+ Waiter> seat C4
+   -> Waiter seats C4 at Table 2.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 17 ---
+   * C3 finishes eating: READY_TO_PAY (pays next turn at the earliest).
+   * Still waiting, satisfaction drops: C4 44->36, C5 68->60, C6 92->84
+ Served 2 | Unhappy departures 1 | Revenue $21.60 | Avg satisfaction (paid) 44.0 | Turns used 17/18
+
+==============================================================================
+ TURN 18 of 18     Revenue $21.60     Avg satisfaction (paid) 44.0
+ Happy Hour: available (once per game; you will be asked at the start of each turn)
+==============================================================================
+ Waiting queue : C5, C6
+ Tables        : Table 1: C3   Table 2: C4
+
+ Cust Type     Satisfaction       Status                   Order
+ C3   VIP       55 [######....]   READY_TO_PAY             Salad + Burger SERVED, bill $19.44
+ C4   Regular   36 [####......]   seated, not yet ordered  -
+ C5   Regular   60 [######....]   waiting in the queue     -
+ C6   Regular   84 [########..]   waiting in the queue     -
+ Paid          : C1 $21.60 (44)
+ Left unhappy  : C2
+
+ Staff tasks available
+   Host    : wait
+   Waiter  : order C4 | wait
+   Chef    : wait
+   Cashier : automatic: will charge C3 this turn
+ Start Happy Hour this turn? (y/N)> n            # T18
+ Host> wait
+   -> Host waits this turn.
+ Waiter> order C4
+   -> Waiter takes C4's order: C4 chooses Salad + Burger ($21.60, 2 preparation units).
+   Chef can now: cook C4 (Salad + Burger 0/2) | wait
+ Chef> cook C4
+   -> Chef prepares C4's Salad + Burger: 1/2 units done.
+ --- End of turn 18 ---
+   * Cashier collects $19.44 from C3: PAID, satisfaction 55 recorded, Table 1 is free.
+   * Still waiting, satisfaction drops: C4 36->28, C5 60->52, C6 84->76
+ Served 2 | Unhappy departures 1 | Revenue $41.04 | Avg satisfaction (paid) 49.5 | Turns used 18/18
+
+==============================================================================
+ GAME OVER - all 18 turns played
+==============================================================================
+ Paid customers             2        at least 4        NOT met
+ Revenue                    $41.04   at least $45.00   NOT met
+ Avg satisfaction (paid)    49.5     at least 60       NOT met
+ Served 2 | Unhappy departures 1
+
+ RESULT: DEFEAT
+==============================================================================

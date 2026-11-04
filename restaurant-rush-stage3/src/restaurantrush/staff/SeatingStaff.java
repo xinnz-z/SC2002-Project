@@ -1,0 +1,50 @@
+package restaurantrush.staff;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import restaurantrush.model.Customer;
+import restaurantrush.model.Restaurant;
+import restaurantrush.model.Table;
+
+/**
+ * Staff who can seat queued customers: the Waiter (as one of several tasks)
+ * and the Host (as their only task). Seating works the same for both, so it
+ * lives here once.
+ */
+public abstract class SeatingStaff extends Staff {
+
+    protected SeatingStaff(int tasksPerTurn) {
+        super(tasksPerTurn);
+    }
+
+    /**
+     * Seats a queued customer.
+     *
+     * @param table a specific table, or null for the first free table
+     */
+    public ActionResult seat(Customer customer, Table table, Restaurant restaurant) {
+        if (!hasTaskLeft()) {
+            return alreadyBusy();
+        }
+        Optional<String> problem = restaurant.checkCanSeat(customer, table);
+        if (problem.isPresent()) {
+            return ActionResult.failure(problem.get());
+        }
+        Table chosen = restaurant.seat(customer, table);
+        recordTaskDone();
+        return ActionResult.success(getRole() + " seats " + customer.getLabel() + " at Table " + chosen.getNumber() + ".");
+    }
+
+    /** "seat Cn" for each queued customer, if a table is free. */
+    protected List<String> describeSeatingTasks(Restaurant restaurant) {
+        List<String> tasks = new ArrayList<>();
+        if (restaurant.findFreeTable().isPresent()) {
+            for (Customer customer : restaurant.getQueue().getCustomers()) {
+                tasks.add("seat " + customer.getLabel());
+            }
+        }
+        return tasks;
+    }
+}
