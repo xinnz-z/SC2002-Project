@@ -1,0 +1,446 @@
+==============================================================================
+  RESTAURANT RUSH  -  Stage 1: basic restaurant operation
+==============================================================================
+You are the manager. Each turn, give the Waiter one task and the Chef one
+preparation unit. The Cashier charges customers automatically.
+
+Setting : 18 turns, 2 tables, customers arrive on turns 1, 4, 7, 10, 13, 16
+Menu    : Salad $9.00 (1 unit), Burger $15.00 (1 unit), Pasta $18.00 (2 units)
+Goal    : after turn 18, at least 4 paid customers, revenue at least $45.00,
+          and average satisfaction of paid customers at least 60
+Seed    : 2002 (customers choose their own food from this seed)
+
+Type 'help' at any prompt for the list of commands.
+
+==============================================================================
+ TURN 1 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+==============================================================================
+ Arrival: C1 (Regular) arrives and joins the waiting queue with satisfaction 100.
+ Waiting queue : C1
+ Tables        : Table 1: free   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular  100 [##########]   waiting in the queue     -
+
+ Staff tasks available
+   Waiter  : seat C1 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> seat C1      # T1 Waiter
+   -> Waiter seats C1 at Table 1.
+ Chef> wait         # T1 Chef: nothing ordered yet
+   -> Chef waits this turn.
+ --- End of turn 1 ---
+   * Still waiting, satisfaction drops: C1 100->92
+ Served 0 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 1/18
+
+==============================================================================
+ TURN 2 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+==============================================================================
+ Waiting queue : (empty)
+ Tables        : Table 1: C1   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   92 [#########.]   seated, not yet ordered  -
+
+ Staff tasks available
+   Waiter  : order C1 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> order C1     # T2 Waiter: C1 chooses Salad
+   -> Waiter takes C1's order: C1 chooses Salad ($9.00, 1 preparation unit).
+   Chef can now: cook C1 (Salad 0/1) | wait
+ Chef> cook C1      # T2 Chef: same-turn cooking is allowed -> READY
+   -> Chef finishes C1's Salad (1/1 units): READY. It can be served next turn at the earliest.
+ --- End of turn 2 ---
+   * Still waiting, satisfaction drops: C1 92->84
+ Served 0 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 2/18
+
+==============================================================================
+ TURN 3 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+==============================================================================
+ Waiting queue : (empty)
+ Tables        : Table 1: C1   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   84 [########..]   waiting for food         Salad READY, bill $9.00
+
+ Staff tasks available
+   Waiter  : serve C1 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> serve C1     # T3
+   -> Waiter serves C1's Salad: SERVED. C1 starts eating; satisfaction stays at 84.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 3 ---
+ Served 1 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 3/18
+
+==============================================================================
+ TURN 4 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+==============================================================================
+ Arrival: C2 (Regular) arrives and joins the waiting queue with satisfaction 100.
+ Waiting queue : C2
+ Tables        : Table 1: C1   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   84 [########..]   served, eating           Salad SERVED, bill $9.00
+ C2   Regular  100 [##########]   waiting in the queue     -
+
+ Staff tasks available
+   Waiter  : seat C2 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> seat C2      # T4
+   -> Waiter seats C2 at Table 2.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 4 ---
+   * C1 finishes eating: READY_TO_PAY (pays next turn at the earliest).
+   * Still waiting, satisfaction drops: C2 100->92
+ Served 1 | Unhappy departures 0 | Revenue $0.00 | Avg satisfaction (paid) N/A | Turns used 4/18
+
+==============================================================================
+ TURN 5 of 18     Revenue $0.00     Avg satisfaction (paid) N/A
+==============================================================================
+ Waiting queue : (empty)
+ Tables        : Table 1: C1   Table 2: C2
+
+ Cust Type     Satisfaction       Status                   Order
+ C1   Regular   84 [########..]   READY_TO_PAY             Salad SERVED, bill $9.00
+ C2   Regular   92 [#########.]   seated, not yet ordered  -
+
+ Staff tasks available
+   Waiter  : order C2 | wait
+   Chef    : wait
+   Cashier : automatic: will charge C1 this turn
+ Waiter> order C2     # T5: Burger
+   -> Waiter takes C2's order: C2 chooses Burger ($15.00, 1 preparation unit).
+   Chef can now: cook C2 (Burger 0/1) | wait
+ Chef> cook C2
+   -> Chef finishes C2's Burger (1/1 units): READY. It can be served next turn at the earliest.
+ --- End of turn 5 ---
+   * Cashier collects $9.00 from C1: PAID, satisfaction 84 recorded, Table 1 is free.
+   * Still waiting, satisfaction drops: C2 92->84
+ Served 1 | Unhappy departures 0 | Revenue $9.00 | Avg satisfaction (paid) 84.0 | Turns used 5/18
+
+==============================================================================
+ TURN 6 of 18     Revenue $9.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Waiting queue : (empty)
+ Tables        : Table 1: free   Table 2: C2
+
+ Cust Type     Satisfaction       Status                   Order
+ C2   Regular   84 [########..]   waiting for food         Burger READY, bill $15.00
+ Paid          : C1 $9.00 (84)
+
+ Staff tasks available
+   Waiter  : serve C2 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> serve C2     # T6
+   -> Waiter serves C2's Burger: SERVED. C2 starts eating; satisfaction stays at 84.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 6 ---
+ Served 2 | Unhappy departures 0 | Revenue $9.00 | Avg satisfaction (paid) 84.0 | Turns used 6/18
+
+==============================================================================
+ TURN 7 of 18     Revenue $9.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Arrival: C3 (Regular) arrives and joins the waiting queue with satisfaction 100.
+ Waiting queue : C3
+ Tables        : Table 1: free   Table 2: C2
+
+ Cust Type     Satisfaction       Status                   Order
+ C2   Regular   84 [########..]   served, eating           Burger SERVED, bill $15.00
+ C3   Regular  100 [##########]   waiting in the queue     -
+ Paid          : C1 $9.00 (84)
+
+ Staff tasks available
+   Waiter  : seat C3 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> seat C3      # T7
+   -> Waiter seats C3 at Table 1.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 7 ---
+   * C2 finishes eating: READY_TO_PAY (pays next turn at the earliest).
+   * Still waiting, satisfaction drops: C3 100->92
+ Served 2 | Unhappy departures 0 | Revenue $9.00 | Avg satisfaction (paid) 84.0 | Turns used 7/18
+
+==============================================================================
+ TURN 8 of 18     Revenue $9.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Waiting queue : (empty)
+ Tables        : Table 1: C3   Table 2: C2
+
+ Cust Type     Satisfaction       Status                   Order
+ C2   Regular   84 [########..]   READY_TO_PAY             Burger SERVED, bill $15.00
+ C3   Regular   92 [#########.]   seated, not yet ordered  -
+ Paid          : C1 $9.00 (84)
+
+ Staff tasks available
+   Waiter  : order C3 | wait
+   Chef    : wait
+   Cashier : automatic: will charge C2 this turn
+ Waiter> order C3     # T8: Burger
+   -> Waiter takes C3's order: C3 chooses Burger ($15.00, 1 preparation unit).
+   Chef can now: cook C3 (Burger 0/1) | wait
+ Chef> cook C3
+   -> Chef finishes C3's Burger (1/1 units): READY. It can be served next turn at the earliest.
+ --- End of turn 8 ---
+   * Cashier collects $15.00 from C2: PAID, satisfaction 84 recorded, Table 2 is free.
+   * Still waiting, satisfaction drops: C3 92->84
+ Served 2 | Unhappy departures 0 | Revenue $24.00 | Avg satisfaction (paid) 84.0 | Turns used 8/18
+
+==============================================================================
+ TURN 9 of 18     Revenue $24.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Waiting queue : (empty)
+ Tables        : Table 1: C3   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C3   Regular   84 [########..]   waiting for food         Burger READY, bill $15.00
+ Paid          : C1 $9.00 (84), C2 $15.00 (84)
+
+ Staff tasks available
+   Waiter  : serve C3 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> serve C3     # T9
+   -> Waiter serves C3's Burger: SERVED. C3 starts eating; satisfaction stays at 84.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 9 ---
+ Served 3 | Unhappy departures 0 | Revenue $24.00 | Avg satisfaction (paid) 84.0 | Turns used 9/18
+
+==============================================================================
+ TURN 10 of 18     Revenue $24.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Arrival: C4 (Regular) arrives and joins the waiting queue with satisfaction 100.
+ Waiting queue : C4
+ Tables        : Table 1: C3   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C3   Regular   84 [########..]   served, eating           Burger SERVED, bill $15.00
+ C4   Regular  100 [##########]   waiting in the queue     -
+ Paid          : C1 $9.00 (84), C2 $15.00 (84)
+
+ Staff tasks available
+   Waiter  : seat C4 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> seat C4      # T10
+   -> Waiter seats C4 at Table 2.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 10 ---
+   * C3 finishes eating: READY_TO_PAY (pays next turn at the earliest).
+   * Still waiting, satisfaction drops: C4 100->92
+ Served 3 | Unhappy departures 0 | Revenue $24.00 | Avg satisfaction (paid) 84.0 | Turns used 10/18
+
+==============================================================================
+ TURN 11 of 18     Revenue $24.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Waiting queue : (empty)
+ Tables        : Table 1: C3   Table 2: C4
+
+ Cust Type     Satisfaction       Status                   Order
+ C3   Regular   84 [########..]   READY_TO_PAY             Burger SERVED, bill $15.00
+ C4   Regular   92 [#########.]   seated, not yet ordered  -
+ Paid          : C1 $9.00 (84), C2 $15.00 (84)
+
+ Staff tasks available
+   Waiter  : order C4 | wait
+   Chef    : wait
+   Cashier : automatic: will charge C3 this turn
+ Waiter> order C4     # T11: Burger
+   -> Waiter takes C4's order: C4 chooses Burger ($15.00, 1 preparation unit).
+   Chef can now: cook C4 (Burger 0/1) | wait
+ Chef> cook C4
+   -> Chef finishes C4's Burger (1/1 units): READY. It can be served next turn at the earliest.
+ --- End of turn 11 ---
+   * Cashier collects $15.00 from C3: PAID, satisfaction 84 recorded, Table 1 is free.
+   * Still waiting, satisfaction drops: C4 92->84
+ Served 3 | Unhappy departures 0 | Revenue $39.00 | Avg satisfaction (paid) 84.0 | Turns used 11/18
+
+==============================================================================
+ TURN 12 of 18     Revenue $39.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Waiting queue : (empty)
+ Tables        : Table 1: free   Table 2: C4
+
+ Cust Type     Satisfaction       Status                   Order
+ C4   Regular   84 [########..]   waiting for food         Burger READY, bill $15.00
+ Paid          : C1 $9.00 (84), C2 $15.00 (84), C3 $15.00 (84)
+
+ Staff tasks available
+   Waiter  : serve C4 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> serve C4     # T12
+   -> Waiter serves C4's Burger: SERVED. C4 starts eating; satisfaction stays at 84.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 12 ---
+ Served 4 | Unhappy departures 0 | Revenue $39.00 | Avg satisfaction (paid) 84.0 | Turns used 12/18
+
+==============================================================================
+ TURN 13 of 18     Revenue $39.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Arrival: C5 (Regular) arrives and joins the waiting queue with satisfaction 100.
+ Waiting queue : C5
+ Tables        : Table 1: free   Table 2: C4
+
+ Cust Type     Satisfaction       Status                   Order
+ C4   Regular   84 [########..]   served, eating           Burger SERVED, bill $15.00
+ C5   Regular  100 [##########]   waiting in the queue     -
+ Paid          : C1 $9.00 (84), C2 $15.00 (84), C3 $15.00 (84)
+
+ Staff tasks available
+   Waiter  : seat C5 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> seat C5      # T13
+   -> Waiter seats C5 at Table 1.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 13 ---
+   * C4 finishes eating: READY_TO_PAY (pays next turn at the earliest).
+   * Still waiting, satisfaction drops: C5 100->92
+ Served 4 | Unhappy departures 0 | Revenue $39.00 | Avg satisfaction (paid) 84.0 | Turns used 13/18
+
+==============================================================================
+ TURN 14 of 18     Revenue $39.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Waiting queue : (empty)
+ Tables        : Table 1: C5   Table 2: C4
+
+ Cust Type     Satisfaction       Status                   Order
+ C4   Regular   84 [########..]   READY_TO_PAY             Burger SERVED, bill $15.00
+ C5   Regular   92 [#########.]   seated, not yet ordered  -
+ Paid          : C1 $9.00 (84), C2 $15.00 (84), C3 $15.00 (84)
+
+ Staff tasks available
+   Waiter  : order C5 | wait
+   Chef    : wait
+   Cashier : automatic: will charge C4 this turn
+ Waiter> order C5     # T14: Pasta, 2 units
+   -> Waiter takes C5's order: C5 chooses Pasta ($18.00, 2 preparation units).
+   Chef can now: cook C5 (Pasta 0/2) | wait
+ Chef> cook C5
+   -> Chef prepares C5's Pasta: 1/2 units done.
+ --- End of turn 14 ---
+   * Cashier collects $15.00 from C4: PAID, satisfaction 84 recorded, Table 2 is free.
+   * Still waiting, satisfaction drops: C5 92->84
+ Served 4 | Unhappy departures 0 | Revenue $54.00 | Avg satisfaction (paid) 84.0 | Turns used 14/18
+
+==============================================================================
+ TURN 15 of 18     Revenue $54.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Waiting queue : (empty)
+ Tables        : Table 1: C5   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C5   Regular   84 [########..]   waiting for food         Pasta 1/2 units, bill $18.00
+ Paid          : C1 $9.00 (84), C2 $15.00 (84), C3 $15.00 (84), C4 $15.00 (84)
+
+ Staff tasks available
+   Waiter  : wait
+   Chef    : cook C5 (Pasta 1/2) | wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> serve C5     # T15: refused, only 1/2 units done; the manager chooses again
+   ! C5's Pasta is not READY yet (1/2 preparation units done). Choose again.
+ Waiter> wait         # T15 Waiter
+   -> Waiter waits this turn.
+ Chef> cook C5      # T15 Chef -> READY
+   -> Chef finishes C5's Pasta (2/2 units): READY. It can be served next turn at the earliest.
+ --- End of turn 15 ---
+   * Still waiting, satisfaction drops: C5 84->76
+ Served 4 | Unhappy departures 0 | Revenue $54.00 | Avg satisfaction (paid) 84.0 | Turns used 15/18
+
+==============================================================================
+ TURN 16 of 18     Revenue $54.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Arrival: C6 (Regular) arrives and joins the waiting queue with satisfaction 100.
+ Waiting queue : C6
+ Tables        : Table 1: C5   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C5   Regular   76 [########..]   waiting for food         Pasta READY, bill $18.00
+ C6   Regular  100 [##########]   waiting in the queue     -
+ Paid          : C1 $9.00 (84), C2 $15.00 (84), C3 $15.00 (84), C4 $15.00 (84)
+
+ Staff tasks available
+   Waiter  : serve C5 | seat C6 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> serve C5     # T16: C6 is also waiting, but serving C5 now is the only way C5 pays by turn 18
+   -> Waiter serves C5's Pasta: SERVED. C5 starts eating; satisfaction stays at 76.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 16 ---
+   * Still waiting, satisfaction drops: C6 100->92
+ Served 5 | Unhappy departures 0 | Revenue $54.00 | Avg satisfaction (paid) 84.0 | Turns used 16/18
+
+==============================================================================
+ TURN 17 of 18     Revenue $54.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Waiting queue : C6
+ Tables        : Table 1: C5   Table 2: free
+
+ Cust Type     Satisfaction       Status                   Order
+ C5   Regular   76 [########..]   served, eating           Pasta SERVED, bill $18.00
+ C6   Regular   92 [#########.]   waiting in the queue     -
+ Paid          : C1 $9.00 (84), C2 $15.00 (84), C3 $15.00 (84), C4 $15.00 (84)
+
+ Staff tasks available
+   Waiter  : seat C6 | wait
+   Chef    : wait
+   Cashier : automatic: nobody can pay this turn
+ Waiter> seat C6      # T17
+   -> Waiter seats C6 at Table 2.
+ Chef> wait
+   -> Chef waits this turn.
+ --- End of turn 17 ---
+   * C5 finishes eating: READY_TO_PAY (pays next turn at the earliest).
+   * Still waiting, satisfaction drops: C6 92->84
+ Served 5 | Unhappy departures 0 | Revenue $54.00 | Avg satisfaction (paid) 84.0 | Turns used 17/18
+
+==============================================================================
+ TURN 18 of 18     Revenue $54.00     Avg satisfaction (paid) 84.0
+==============================================================================
+ Waiting queue : (empty)
+ Tables        : Table 1: C5   Table 2: C6
+
+ Cust Type     Satisfaction       Status                   Order
+ C5   Regular   76 [########..]   READY_TO_PAY             Pasta SERVED, bill $18.00
+ C6   Regular   84 [########..]   seated, not yet ordered  -
+ Paid          : C1 $9.00 (84), C2 $15.00 (84), C3 $15.00 (84), C4 $15.00 (84)
+
+ Staff tasks available
+   Waiter  : order C6 | wait
+   Chef    : wait
+   Cashier : automatic: will charge C5 this turn
+ Waiter> order C6     # T18
+   -> Waiter takes C6's order: C6 chooses Burger ($15.00, 1 preparation unit).
+   Chef can now: cook C6 (Burger 0/1) | wait
+ Chef> cook C6
+   -> Chef finishes C6's Burger (1/1 units): READY. It can be served next turn at the earliest.
+ --- End of turn 18 ---
+   * Cashier collects $18.00 from C5: PAID, satisfaction 76 recorded, Table 1 is free.
+   * Still waiting, satisfaction drops: C6 84->76
+ Served 5 | Unhappy departures 0 | Revenue $72.00 | Avg satisfaction (paid) 82.4 | Turns used 18/18
+
+==============================================================================
+ GAME OVER - all 18 turns played
+==============================================================================
+ Paid customers             5        at least 4        met
+ Revenue                    $72.00   at least $45.00   met
+ Avg satisfaction (paid)    82.4     at least 60       met
+ Served 5 | Unhappy departures 0
+
+ RESULT: VICTORY
+==============================================================================
