@@ -1,0 +1,63 @@
+n
+seat C1
+order C1
+cook C1
+n
+serve C1
+wait
+serve C1
+wait
+n
+wait
+wait
+wait
+n
+seat C2
+order C2
+cook C2
+n
+wait
+wait
+cook C2
+n
+wait
+wait
+cook C2
+y
+seat C3
+order C3
+cook C3
+wait
+serve C2
+wait
+wait
+serve C3
+wait
+seat C4
+wait
+wait
+wait
+seat C4
+order C4
+cook C4
+wait
+serve C4
+wait
+seat C5
+order C5
+cook C5
+wait
+wait
+cook C5
+wait
+serve C5
+wait
+seat C6
+order C6
+cook C6
+wait
+serve C6
+wait
+wait
+wait
+wait
