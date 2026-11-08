@@ -70,13 +70,6 @@ Everything follows the brief. Where the brief leaves a choice to the group:
 | `GameStats` / `Objective` | Running totals; deciding victory or defeat |
 | `ConsoleView` / `CommandParser` | Showing state and reading commands; no game rules |
 
-**OO principles in the code:**
-- **Encapsulation:** `Money` stores whole cents and is immutable. `Order` and `Customer` change state only through guarded methods that refuse out-of-sequence calls. `Table.occupy` and `release`, and the `GameStats` recorders, are package-private, so only the model can change them.
-- **Inheritance:** `RegularCustomer` extends `Customer`. `Waiter`, `Chef` and `Cashier` extend `Staff`, which holds the shared one-task-per-turn budget.
-- **Polymorphism:** the display lists every staff member's options through `Staff.describeAvailableTasks()` in one loop. Satisfaction loss is read through `Customer.getSatisfactionLossPerTurn()`.
-- **Composition:** `Restaurant` owns its `Table`s, `WaitingQueue` and `GameStats`. `GameController` owns the `Restaurant` and the three staff members. An `Order` holds a `MenuItem` and a locked `Money` bill.
-- **Dependency inversion:** `GameController` depends on the `GameView` interface, not on the console.
-
 ## Testing
 
 Rule checks (plain Java, no library):
