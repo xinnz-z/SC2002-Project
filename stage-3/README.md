@@ -109,20 +109,6 @@ A combo costs 90% of its two components, rounded to the nearest cent, and takes 
 | `GameStats` / `Objective` | Running totals; deciding victory or defeat |
 | `ConsoleView` / `CommandParser` | Showing state and reading commands; no game rules |
 
-**OO principles in the code:**
-- **Encapsulation:** `Money` holds whole cents. `Order` and `Customer` change state only through guarded methods. `Table.occupy` and `release`, `HappyHour.start`, `Customer.recoverSatisfaction` and the `GameStats` recorders are package-private.
-- **Inheritance:**
-  - `RegularCustomer`, `VIPCustomer` and `CriticCustomer` extend `Customer`.
-  - `ComboMeal` extends `MenuItem`.
-  - `Host` and `Waiter` extend `SeatingStaff`, which extends `Staff`, as do `Chef` and `Cashier`.
-- **Polymorphism:**
-  - Customer behaviour is dispatched through `getSatisfactionLossPerTurn()`, `chooseMenuItem()` and `calculateBill()`, with no type checks.
-  - A `ComboMeal` is used wherever a `MenuItem` is.
-  - The controller seats through either kind of `SeatingStaff`.
-  - The display lists every `Staff` member's options in one loop.
-- **Composition:** `Restaurant` owns its `Table`s, `WaitingQueue`, `HappyHour` and `GameStats`. `GameController` owns the `Restaurant` and four staff members. A `ComboMeal` is made of two `MenuItem`s.
-- **Dependency inversion:** `GameController` depends on the `GameView` interface, not on the console.
-
 ## Stage 1 → Stage 2 changes
 
 **Added:**
