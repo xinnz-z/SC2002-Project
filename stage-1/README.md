@@ -70,26 +70,6 @@ Everything follows the brief. Where the brief leaves a choice to the group:
 | `GameStats` / `Objective` | Running totals; deciding victory or defeat |
 | `ConsoleView` / `CommandParser` | Showing state and reading commands; no game rules |
 
-## Testing
-
-Rule checks (plain Java, no library):
-
-```bash
-javac -d out -sourcepath src:test test/restaurantrush/RuleChecks.java      # Windows: src;test
-java -cp out restaurantrush.RuleChecks
-```
-
-There are 30 checks, including the brief's section 3.3 worked example turn by turn, invalid choices, one task per turn, Cashier timing and order, and abandonment.
-
-Reproducible victory and defeat runs are in `test-runs/` and explained in `TEST_NOTES.md`:
-
-```bash
-java -cp out restaurantrush.Main < test-runs/victory.txt
-java -cp out restaurantrush.Main < test-runs/defeat.txt
-```
-
-In PowerShell: `Get-Content test-runs/victory.txt | java -cp out restaurantrush.Main`
-
 ## Video timestamps
 
 | # | Segment | Time |
