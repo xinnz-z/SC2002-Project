@@ -70,6 +70,9 @@ Everything follows the brief. Where the brief leaves a choice to the group:
 | `GameStats` / `Objective` | Running totals; deciding victory or defeat |
 | `ConsoleView` / `CommandParser` | Showing state and reading commands; no game rules |
 
+## Testing
+Test runs explained in `TEST_NOTES.md`
+
 ## Video timestamps
 
 | # | Segment | Time |
