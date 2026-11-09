@@ -1,24 +1,3 @@
-# Stage 2 test notes
-
-Both runs use the base setting with seed 2002. The same six customers arrive in both runs; only the manager's choices differ.
-
-| Customer | Type | Arrives | Dish |
-|---|---|---|---|
-| C1 | Regular | 1 | Salad $9.00 |
-| C2 | **Critic** | 4 | Pasta $18.00 (Critic preference) |
-| C3 | **VIP** | 7 | Burger $13.50 (10% off) |
-| C4 | Regular | 10 | Burger $15.00 |
-| C5 | Regular | 13 | Pasta $18.00 |
-| C6 | Regular | 16 | Burger $15.00 |
-
-```bash
-javac -d out -sourcepath src src/restaurantrush/Main.java
-java -cp out restaurantrush.Main < test-runs/victory.txt
-java -cp out restaurantrush.Main < test-runs/defeat.txt
-```
-
-Each script has one command per line, Waiter then Chef for each turn, with an extra line wherever a choice is refused and asked again. The full output is in `test-runs/victory-output.txt` and `test-runs/defeat-output.txt`.
-
 ## Run 1: Victory
 
 **Strategy:** seat customers promptly and cook each order the turn it is taken. When the Waiter is needed in two places, favour the customer who loses satisfaction fastest or whose payment is at risk.
