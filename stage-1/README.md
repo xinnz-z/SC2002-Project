@@ -20,8 +20,8 @@ Requires Java 11 or later. No libraries, no network.
 From the project folder:
 
 ```bash
-javac -d out -sourcepath src src/restaurantrush/Main.java
-java -cp out restaurantrush.Main
+javac -d out -sourcepath src src/restaurantrush/RestaurantRushApp.java
+java -cp out restaurantrush.RestaurantRushApp
 ```
 
 ## How to play
