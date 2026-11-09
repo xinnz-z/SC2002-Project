@@ -13,7 +13,6 @@ Requires Java 11 or later. No libraries, no network.
 | Repository | `<add repository URL>` |
 | Stage tags | `<link to stage-1>` · `<link to stage-2>` · `<link to stage-3>` |
 | Stage 1 → 2 comparison | `<https://github.com/OWNER/REPO/compare/stage-1...stage-2>` |
-| AI history | `<member 1: link to ai-history on their branch>` · `<member 2>` · `<member 3>` · `<member 4>` |
 | Video | `<add video link>` (timestamps below) |
 
 ## Build and run
