@@ -1,15 +1,3 @@
-# Stage 1 test notes
-
-Both runs use the base setting with seed 2002, so customers always order C1 Salad, C2 to C4 Burger, C5 Pasta and C6 Burger. The same six customers arrive in both runs; only the manager's choices differ.
-
-```bash
-javac -d out -sourcepath src src/restaurantrush/Main.java
-java -cp out restaurantrush.Main < test-runs/victory.txt
-java -cp out restaurantrush.Main < test-runs/defeat.txt
-```
-
-Each script has one command per line, Waiter then Chef for each turn, with an extra line wherever a choice is refused and asked again. The full output is in `test-runs/victory-output.txt` and `test-runs/defeat-output.txt`.
-
 ## Run 1: Victory
 
 **Strategy:** seat each customer on the turn they arrive, take the order the next turn and cook it immediately, and serve as soon as the dish can be served.
@@ -47,11 +35,3 @@ What it shows:
 Each paying customer spends six turns unserved (100 − 6 × 8 = 52).
 
 **Result:** 4 paid (met), revenue $54.00 (met), average satisfaction 52.0 (**not met**, target 60). **DEFEAT.** The restaurant earned enough and served enough customers, but the delay at the start carried through to every later customer.
-
-## Rule checks
-
-`java -cp out restaurantrush.RuleChecks` (after compiling with `-sourcepath src:test`) runs 30 checks:
-- **Section 3.3 example:** satisfaction 92, 84, 76, 76 at the end of turns 1 to 4, READY_TO_PAY on turn 5, $18.00 paid on turn 6, and an early serve refused with the reason.
-- **Invalid choices:** a refused command doesn't use up the task, a second Waiter task in one turn is refused, and seating is refused when every table is occupied.
-- **Cashier:** charges one customer per turn, oldest first, never in the turn they became READY_TO_PAY; revenue shows two decimals and tables are freed.
-- **No service at all:** C1 leaves at the end of turn 13 and C2 at the end of turn 16, the average shows N/A, and the result is DEFEAT.
