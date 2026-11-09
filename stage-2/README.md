@@ -109,16 +109,7 @@ Each `CustomerType` constant overrides `create(...)`, so there is no switch on c
 With 11 new VIP and Critic checks, the total is 43, and all pass.
 
 ## Testing
-
-```bash
-javac -d out -sourcepath src:test test/restaurantrush/RuleChecks.java      # Windows: src;test
-java -cp out restaurantrush.RuleChecks
-
-java -cp out restaurantrush.Main < test-runs/victory.txt
-java -cp out restaurantrush.Main < test-runs/defeat.txt
-```
-
-The runs are explained in `TEST_NOTES.md`. In PowerShell: `Get-Content test-runs/victory.txt | java -cp out restaurantrush.Main`
+Test runs explained in `TEST_NOTES.md`
 
 ## Video timestamps
 
