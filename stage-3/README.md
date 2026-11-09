@@ -170,16 +170,7 @@ A combo costs 90% of its two components, rounded to the nearest cent, and takes 
 With 28 new Stage 3 checks, the total is 71, and all pass.
 
 ## Testing
-
-```bash
-javac -d out -sourcepath src:test test/restaurantrush/RuleChecks.java      # Windows: src;test
-java -cp out restaurantrush.RuleChecks
-
-java -cp out restaurantrush.Main < test-runs/victory.txt
-java -cp out restaurantrush.Main < test-runs/defeat.txt
-```
-
-The runs are explained in `TEST_NOTES.md`. In PowerShell: `Get-Content test-runs/victory.txt | java -cp out restaurantrush.Main`
+Test runs explained in `TEST_NOTES.md`
 
 ## Video timestamps
 
