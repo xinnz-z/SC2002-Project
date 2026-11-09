@@ -1,26 +1,3 @@
-# Stage 3 test notes
-
-Both runs use the base setting with seed 2002. The same six customers arrive in both runs; only the manager's choices differ.
-
-| Customer | Type | Arrives | Dish picked by seed |
-|---|---|---|---|
-| C1 | Regular | 1 | Salad |
-| C2 | **Critic** | 4 | Burger + Pasta (Critic rule: most preparation units) |
-| C3 | **VIP** | 7 | Burger |
-| C4 | Regular | 10 | Burger |
-| C5 | Regular | 13 | Pasta |
-| C6 | Regular | 16 | Burger |
-
-A Regular or VIP who has waited 2 or more turns before ordering is hungry and orders a combo instead, so what is actually ordered depends on the manager.
-
-```bash
-javac -d out -sourcepath src src/restaurantrush/Main.java
-java -cp out restaurantrush.Main < test-runs/victory.txt
-java -cp out restaurantrush.Main < test-runs/defeat.txt
-```
-
-Each turn in the scripts is the Happy Hour answer (`y` or `n`, until it has been used), then the Host, Waiter and Chef commands, with an extra line wherever a choice is refused and asked again. The full output is in `test-runs/victory-output.txt` and `test-runs/defeat-output.txt`.
-
 ## Run 1: Victory
 
 **Strategy:** the Host seats each customer on arrival, the Waiter takes the order the same turn, and the Chef starts cooking at once. Happy Hour is saved for turn 7, when the Critic's dish is waiting and the VIP arrives.
