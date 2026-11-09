@@ -75,24 +75,24 @@ Each stage can be compiled and executed independently.
 
 ```bash
 cd restaurant-rush
-javac -d out -sourcepath src src/restaurantrush/Main.java
-java -cp out restaurantrush.Main
+javac -d out -sourcepath src src/restaurantrush/RestaurantRushApp.java
+java -cp out restaurantrush.RestaurantRushApp
 ```
 
 ### Stage 2
 
 ```bash
 cd restaurant-rush-stage2
-javac -d out -sourcepath src src/restaurantrush/Main.java
-java -cp out restaurantrush.Main
+javac -d out -sourcepath src src/restaurantrush/RestaurantRushApp.java
+java -cp out restaurantrush.RestaurantRushApp
 ```
 
 ### Stage 3
 
 ```bash
 cd restaurant-rush-stage3
-javac -d out -sourcepath src src/restaurantrush/Main.java
-java -cp out restaurantrush.Main
+javac -d out -sourcepath src src/restaurantrush/RestaurantRushApp.java
+java -cp out restaurantrush.RestaurantRushApp
 ```
 
 ## 5. Testing and Validation
