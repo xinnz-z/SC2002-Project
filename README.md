@@ -97,26 +97,7 @@ java -cp out restaurantrush.RestaurantRushApp
 
 ## 5. Testing and Validation
 
-Each development stage includes automated rule checks, test notes and reproducible gameplay scenarios.
-
-| Stage | Automated Rule Checks |
-|---|---:|
-| Stage 1 | 31 |
-| Stage 2 | 43 |
-| Stage 3 | 71 |
-
-Test coverage includes:
-- Customer arrivals and satisfaction.
-- Staff task limitations.
-- Food preparation and serving sequence.
-- Payment processing and revenue calculation.
-- Customer abandonment.
-- VIP and Critic behaviour.
-- ComboMeal pricing and selection.
-- Happy Hour duration and discounts.
-- Host seating behaviour.
-- Victory and defeat scenarios.
-
+Each development stage includes test runs.
 Recorded victory and defeat runs are included in each stage's `test-runs` folder.
 
 ## 6. GitHub Development History
@@ -145,8 +126,6 @@ The following documentation forms part of the group project submission:
 - Group Report – Design decisions, implementation, testing and design evolution.
 - Individual Reflections – Contributions and learning experiences of each group member.
 - Presentation Video – Gameplay demonstration and explanation of the project.
-
-*Links to the final report, diagrams and presentation will be added when the deliverables are uploaded.*
 
 ## 8. Team and Contributions
 
