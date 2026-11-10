@@ -6,15 +6,6 @@ A turn-based, command-line restaurant management game in Java. You are the manag
 
 Requires Java 11 or later. No libraries, no network.
 
-## Links
-
-| | |
-|---|---|
-| Repository | `<add repository URL>` |
-| Stage tags | `<link to stage-1>` · `<link to stage-2>` · `<link to stage-3>` |
-| Comparisons | `<https://github.com/OWNER/REPO/compare/stage-1...stage-2>` · `<https://github.com/OWNER/REPO/compare/stage-2...stage-3>` |
-| Video | `<add video link>` (timestamps below) |
-
 ## Build and run
 
 ```bash
@@ -170,15 +161,3 @@ With 28 new Stage 3 checks, the total is 71, and all pass.
 
 ## Testing
 Test runs explained in `TEST_NOTES.md`
-
-## Video timestamps
-
-| # | Segment | Time |
-|---|---|---|
-| 1 | Game launching from the submitted project | `--:--` |
-| 2 | Manager choices, including a constrained staff decision | `--:--` |
-| 3 | A dish going READY → SERVED → payment | `--:--` |
-| 4 | A VIP or Critic behaviour | `--:--` |
-| 5 | A Stage 3 feature | `--:--` |
-| 6 | One victory and one defeat | `--:--` |
-| 7 | Stage tag comparisons and the diagrams | `--:--` |
