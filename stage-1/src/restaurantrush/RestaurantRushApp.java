@@ -6,7 +6,7 @@ import restaurantrush.control.GameView;
 import restaurantrush.ui.ConsoleView;
 
 /** Entry point: plays one game in the base setting on the console. */
-public RestaurantRushApp {
+public class RestaurantRushApp {
 
     public static void main(String[] args) {
         GameView view = new ConsoleView(System.in, System.out);
