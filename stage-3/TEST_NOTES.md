@@ -40,24 +40,3 @@ What it shows:
 - **The Critic runs out of patience:** seated on turn 9 already at 40 and waiting for a 3-unit combo, the Critic reaches 0 at the end of turn 12 and leaves without paying.
 
 **Result:** 2 paid (target 4), revenue $41.04 (target $45.00), average satisfaction 49.5 (target 60). **DEFEAT**, with all three targets missed.
-
-## Rule checks
-
-`java -cp out restaurantrush.RuleChecks` runs 71 checks: the 43 from Stages 1 and 2, plus the Stage 3 ones below.
-
-**Combos:**
-- Salad + Pasta costs $24.30 with 3 units; Salad + Burger costs $21.60 with 2.
-- The Critic orders Burger + Pasta.
-- A customer who has waited 1 turn orders their dish; after 2 turns, the cheapest combo with it.
-- The VIP discount applies to combos.
-
-**Happy Hour:**
-- It can be used once, is active on its start turn and the next, and shows 2 then 1 turns remaining.
-- Prices: a Regular Burger is $12.00 and a VIP Burger $10.80. An earlier order keeps its price, and there's no discount afterwards.
-- Recovery is +15, capped at 100, for waiting customers only. A second activation is refused.
-
-**Host:**
-- It cannot take orders.
-- Seat, order and cook can all happen on one turn.
-- The Host and Waiter can each seat someone on the same turn; the Host cannot seat when no table is free.
-- In a full game, a Salad ordered in Happy Hour pays $7.20.
