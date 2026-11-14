@@ -33,14 +33,3 @@ Decisions shown:
 **Result:** 3 paid (target 4), revenue $40.50 (target $45.00), average satisfaction 44.3 (target 60). **DEFEAT**, with all three targets missed.
 
 The Critic and the VIP each waited seven turns before being served. The Critic ends at 16 (7 × 12 lost) and the VIP at 65 (7 × 5 lost), which is the Stage 2 behaviour coming from the customer objects under the same turn rules.
-
-## Rule checks
-
-`java -cp out restaurantrush.RuleChecks` runs 43 checks:
-- **Stage 1 checks:** all still run, including the section 3.3 example.
-- **Base setting:** still has six arrivals, including at least one VIP and one Critic.
-- **Satisfaction loss:** after one waiting turn a Regular is at 92, a VIP at 95 and a Critic at 88.
-- **Bills:** a VIP pays $13.50 for a Burger and $16.20 for Pasta; a Critic pays full price.
-- **Critic choice:** a Critic chooses Pasta.
-- **VIP order flow:** a VIP goes through the same order flow, and the discounted bill is locked when the order is taken.
-- **No service at all:** the Critic (from turn 4) leaves at the end of turn 12, a turn before the Regular who arrived on turn 1.
