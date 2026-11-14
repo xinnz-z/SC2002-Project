@@ -10,7 +10,7 @@ Requires Java 11 or later. No libraries, no network.
 
 ```bash
 javac -d out -sourcepath src src/restaurantrush/RestaurantRushApp.java
-java -cp out RestaurantRushApp.Main
+java -cp out restaurantrush.RestaurantRushApp
 ```
 
 ## How to play
