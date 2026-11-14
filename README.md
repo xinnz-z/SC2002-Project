@@ -29,7 +29,7 @@ The project consists of three independently runnable stages.
 - Customer satisfaction, waiting penalties and abandonment.
 - Revenue tracking and victory/defeat conditions.
 
-[View Stage 1 Source Code](./stage-3)
+[View Stage 1 Source Code](./stage-1)
 
 ### Stage 2 – Customer Behaviour Extension
 - Introduces VIP customers with a 10% discount.
