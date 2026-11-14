@@ -74,7 +74,7 @@ Each stage can be compiled and executed independently.
 ### Stage 1
 
 ```bash
-cd restaurant-rush
+cd stage-1
 javac -d out -sourcepath src src/restaurantrush/RestaurantRushApp.java
 java -cp out restaurantrush.RestaurantRushApp
 ```
@@ -82,7 +82,7 @@ java -cp out restaurantrush.RestaurantRushApp
 ### Stage 2
 
 ```bash
-cd restaurant-rush-stage2
+cd stage-2
 javac -d out -sourcepath src src/restaurantrush/RestaurantRushApp.java
 java -cp out restaurantrush.RestaurantRushApp
 ```
@@ -90,7 +90,7 @@ java -cp out restaurantrush.RestaurantRushApp
 ### Stage 3
 
 ```bash
-cd restaurant-rush-stage3
+cd stage-3
 javac -d out -sourcepath src src/restaurantrush/RestaurantRushApp.java
 java -cp out restaurantrush.RestaurantRushApp
 ```
