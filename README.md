@@ -29,7 +29,7 @@ The project consists of three independently runnable stages.
 - Customer satisfaction, waiting penalties and abandonment.
 - Revenue tracking and victory/defeat conditions.
 
-[View Stage 1 Source Code](./restaurant-rush)
+[View Stage 1 Source Code](./stage-3)
 
 ### Stage 2 – Customer Behaviour Extension
 - Introduces VIP customers with a 10% discount.
@@ -37,7 +37,7 @@ The project consists of three independently runnable stages.
 - Implements different satisfaction-loss rates for each customer type.
 - Uses inheritance and polymorphism to support different customer behaviours.
 
-[View Stage 2 Source Code](./restaurant-rush-stage2)
+[View Stage 2 Source Code](./stage-2)
 
 ### Stage 3 – New Staff and Menu Policies
 - Introduces a Host who can seat one additional customer per turn.
@@ -45,7 +45,7 @@ The project consists of three independently runnable stages.
 - Introduces Happy Hour, providing a 20% discount on new orders and satisfaction recovery for eligible customers.
 - Integrates VIP discounts with Happy Hour pricing.
 
-[View Stage 3 Source Code](./restaurant-rush-stage3)
+[View Stage 3 Source Code](./stage-3)
 
 ## 3. Game Objectives and Rules
 
