@@ -138,19 +138,20 @@ Each member contributes
 | Content | Timestamp |
 |---|---|
 | Game overview and the three stages. | 0:00 |
-| Gameplay demonstration and key outcomes. | |
-| Class diagrams and evidence of stage changes. | |
-| Selected use case and sequence diagram. | |
-| Individual contributions and key learning. | |
+| Gameplay demonstration and key outcomes. | 1:39 |
+| Class diagrams and evidence of stage changes. | 5:23 |
+| Selected use case and sequence diagram. | 9:51 |
+| Individual contributions and key learning. | 13:22 |
 
 ## 10. Demo timestamp 
 
 | Segment | Timestamp |
 |---|---|
-| The game launching from the submitted project |  |
-| Meaningful manager choices, including a decision where staff are constrained | |
-| A dish going READY → SERVED → payment | |
-| A VIP or Critic behaviour | |
-| A Stage 3 feature | |
-| One victory and one defeat (separate reproducible runs, or an accelerated replay) | |
-| The stage tag comparisons and the diagrams | |
+| The game launching from the submitted project | 1:39 |
+| Meaningful manager choices, including a decision where staff are constrained | 2:50 |
+| A dish going READY → SERVED → payment | 3:44 |
+| A VIP or Critic behaviour | 2:50 |
+| A Stage 3 feature | 2:50 |
+| Victory run | 1:39 |
+| Defeat run | 4:13 |
+| The stage tag comparisons and the diagrams | 5:23 |
