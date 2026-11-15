@@ -145,6 +145,8 @@ Each member contributes
 
 ## 10. Demo timestamp 
 
+*Demo is played in the presentation video*
+
 | Segment | Timestamp |
 |---|---|
 | The game launching from the submitted project | 1:39 |
