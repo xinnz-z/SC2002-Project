@@ -100,5 +100,3 @@ With 11 new VIP and Critic checks, the total is 43, and all pass.
 
 ## Testing
 Test runs explained in `TEST_NOTES.md`
-
-## Video timestamps
