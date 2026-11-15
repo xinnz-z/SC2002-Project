@@ -133,7 +133,7 @@ This project was developed collaboratively by the SC2002 project group.
 
 Each member contributes
 
-## 9. Video timestamp
+## 9. Presentation timestamp
 
 | Content | Timestamp |
 |---|---|
@@ -142,3 +142,15 @@ Each member contributes
 | Class diagrams and evidence of stage changes. | |
 | Selected use case and sequence diagram. | |
 | Individual contributions and key learning. | |
+
+## 10. Demo timestamp 
+
+| Segment | Timestamp |
+|---|---|
+| The game launching from the submitted project |  |
+| Meaningful manager choices, including a decision where staff are constrained | |
+| A dish going READY → SERVED → payment | |
+| A VIP or Critic behaviour | |
+| A Stage 3 feature | |
+| One victory and one defeat (separate reproducible runs, or an accelerated replay) | |
+| The stage tag comparisons and the diagrams | |
