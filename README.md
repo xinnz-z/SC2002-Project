@@ -132,3 +132,13 @@ The following documentation forms part of the group project submission:
 This project was developed collaboratively by the SC2002 project group.
 
 Each member contributes
+
+## 9. Video timestamp
+
+| Content | Timestamp |
+|---|---|---|
+| Game overview and the three stages. | 0:00
+| Gameplay demonstration and key outcomes. | 
+| Class diagrams and evidence of stage changes. |
+| Selected use case and sequence diagram. |
+| Individual contributions and key learning. |
