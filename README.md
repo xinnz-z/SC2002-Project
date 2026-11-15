@@ -139,8 +139,6 @@ This project was developed collaboratively by three group members, with responsi
 
 Further details on individual contributions, challenges and learning outcomes are documented in **Section 7.2 — Individual Contributions and Reflections** of the project report.
 
-Each member contributes
-
 ## 9. Presentation timestamp
 
 | Content | Timestamp |
