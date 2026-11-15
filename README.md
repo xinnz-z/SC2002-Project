@@ -129,7 +129,15 @@ The following documentation forms part of the group project submission:
 
 ## 8. Team and Contributions
 
-This project was developed collaboratively by the SC2002 project group.
+This project was developed collaboratively by three group members, with responsibilities distributed as follows:
+
+| Team Member | Contributions |
+|---|---|
+| **Floyd Ng Chen Xi** | Developed the Stage 1 and Stage 2 Java implementations, designed the majority of the UML class diagrams, and contributed extensively to the project report documentation. |
+| **Lin Jiaxin** | Developed the Stage 3 Java implementation, created the Stage 3 UML sequence diagram, contributed extensively to the project report and formatting, managed the GitHub repository and stage tags, and edited the final presentation video. |
+| **Gao Yuxin** | Assisted with the visual presentation and enhancing of the UML class diagrams. |
+
+Further details on individual contributions, challenges and learning outcomes are documented in **Section 7.2 — Individual Contributions and Reflections** of the project report.
 
 Each member contributes
 
