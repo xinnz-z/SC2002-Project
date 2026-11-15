@@ -133,9 +133,9 @@ This project was developed collaboratively by three group members, with responsi
 
 | Team Member | Contributions |
 |---|---|
-| **Floyd Ng Chen Xi** | Developed the Stage 1 and Stage 2 Java implementations, designed the majority of the UML class diagrams, and contributed extensively to the project report documentation. |
-| **Lin Jiaxin** | Developed the Stage 3 Java implementation, created the Stage 3 UML sequence diagram, contributed extensively to the project report and formatting, managed the GitHub repository and stage tags, and edited the final presentation video. |
-| **Gao Yuxin** | Assisted with the visual presentation and enhancing of the UML class diagrams. |
+| **Floyd Ng Chen Xi** | Developed the Stage 1 and Stage 2 Java implementations, designed the majority of the UML class diagrams, contributed extensively to the project report and formatting, and helped manage the GitHub repository and documentation. |
+| **Lin Jiaxin** | Developed the Stage 3 Java implementation, created the Stage 3 UML sequence diagram, contributed extensively to the project report and formatting, collaborated on GitHub repository management and stage tags, and edited the final presentation video. |
+| **Gao Yuxin** | Assisted with the visual presentation and enhancemnet of the UML class diagrams. |
 
 Further details on individual contributions, challenges and learning outcomes are documented in **Section 7.2 — Individual Contributions and Reflections** of the project report.
 
