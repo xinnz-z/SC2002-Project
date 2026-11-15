@@ -136,9 +136,7 @@ Each member contributes
 ## 9. Video timestamp
 
 | Content | Timestamp |
-|---|---|---|
-| Game overview and the three stages. | 0:00
-| Gameplay demonstration and key outcomes. | 
-| Class diagrams and evidence of stage changes. |
-| Selected use case and sequence diagram. |
-| Individual contributions and key learning. |
+|---|---|
+| Stage 1 | Basic restaurant operations with Regular customers, Waiter, Chef and Cashier. |
+| Stage 2 | Introduces VIP and Critic customers with different satisfaction and ordering behaviours. |
+| Stage 3 | Introduces Host, ComboMeal and Happy Hour features. |
