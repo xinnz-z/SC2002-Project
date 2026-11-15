@@ -112,8 +112,8 @@ The project is maintained through three stage-specific commits and Git tags.
 
 ### Stage Comparisons
 
-- [Stage 1 → Stage 2](../../compare/stage-1...stage-2)
-- [Stage 2 → Stage 3](../../compare/stage-2...stage-3)
+- [Stage 1 → Stage 2]([../../compare/stage-1...stage-2](https://github.com/xinnz-z/SC2002-Project/blob/main/stage-2/README.md#stage-1--stage-2-changes))
+- [Stage 2 → Stage 3]([../../compare/stage-2...stage-3](https://github.com/xinnz-z/SC2002-Project/blob/main/stage-3/README.md#stage-1--stage-2-changes))
 
 These comparisons document the changes introduced during each development stage.
 
